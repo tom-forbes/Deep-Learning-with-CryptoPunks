@@ -1,0 +1,11 @@
+tensorflow
+Keras
+sklearn
+pillow
+wandb
+imageio
+opencv-python
+matplotlib
+pandas
+tqdm
+ipywidgets==7.5.1
