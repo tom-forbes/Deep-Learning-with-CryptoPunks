@@ -7,6 +7,8 @@ import os
 import urllib.request
 from cv2 import imread
 from tqdm.notebook import  tqdm
+import warnings
+warnings.filterwarnings("ignore")
 
 base_dir = '/Users/tomforbes/Documents/python/fin/crypto/keraspunk'
 
@@ -42,7 +44,7 @@ def data(offset):
 
 print('Downloading CryptoPunks...')
 metadata = pd.DataFrame()
-for i in tqdm(range(0,1020,20)):
+for i in tqdm(range(0,10020,20)):
   #print('Punks downloaded: {}'.format(len(os.listdir(os.path.join(base_dir,"punks")))))
   metadata = pd.concat([metadata,data(i)])
 
