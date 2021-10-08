@@ -10,7 +10,8 @@ from tqdm.notebook import  tqdm
 import warnings
 warnings.filterwarnings("ignore")
 
-base_dir = '/Users/tomforbes/Documents/python/fin/crypto/keraspunk'
+base_dir = ''
+os.mkdir(os.path.join(base_dir, 'punks'))
 
 # %%
 def data(offset):
@@ -54,7 +55,7 @@ for i in metadata['type'].unique():
   metadata[i] = np.where(metadata['type']==i,1,0)
 metadata
 
-for j in range(7):
+for j in range(5):
   for i in metadata[f'accessory{j}'].unique():
     try:
       print(metadata[i].iloc[0])
@@ -78,6 +79,8 @@ from skimage.transform import resize
 
 X3 = []
 Y3 = []
+X2 = []
+Y2 = []
 
 print('Concatenating Images.')
 for i in tqdm(range(10001)):
